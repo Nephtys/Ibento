@@ -1,4 +1,6 @@
 Ibento::Application.routes.draw do |map|
+  resources :groups
+
   resources :users
 
   # The priority is based upon order of creation:
