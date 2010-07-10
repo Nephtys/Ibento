@@ -1,4 +1,8 @@
 Ibento::Application.routes.draw do |map|
+  resources :team_members
+
+  resources :teams
+
   resources :groups
 
   resources :users

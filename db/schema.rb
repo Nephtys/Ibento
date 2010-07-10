@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100710205115) do
+ActiveRecord::Schema.define(:version => 20100710215359) do
 
   create_table "groups", :force => true do |t|
     t.string   "name"
@@ -20,6 +20,21 @@ ActiveRecord::Schema.define(:version => 20100710205115) do
   create_table "groups_users", :id => false, :force => true do |t|
     t.integer "group_id"
     t.integer "user_id"
+  end
+
+  create_table "team_members", :force => true do |t|
+    t.integer  "team_id"
+    t.integer  "user_id"
+    t.integer  "auth_level"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "teams", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", :force => true do |t|
