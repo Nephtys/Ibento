@@ -39,4 +39,23 @@ class UserTest < ActiveSupport::TestCase
     user.email = 'blabla@bla.com'
     assert user.valid?
   end
+
+  test "user login must be unique" do
+    user = User.new(:login => users(:john).login,
+                    :email => 'myemail@mail.com',
+                    :first_name => 'myfirstname',
+                    :last_name => 'mylastname')
+    assert !user.save
+    assert user.errors[:login].any?
+  end
+
+  test "user email must be unique" do
+    user = User.new(:email => users(:john).email,
+                    :login => 'mylogin',
+                    :first_name => 'myfirstname',
+                    :last_name => 'mylastname')
+    assert !user.save
+    assert user.errors[:email].any?
+  end
+
 end

@@ -11,3 +11,9 @@ two:
   email: MyString
   first_name: MyString
   last_name: MyString
+
+john:
+  login: johndoe
+  email: johndoe@mail.com
+  first_name: John
+  last_name: Doe
