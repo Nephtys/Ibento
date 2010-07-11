@@ -6,6 +6,7 @@ class TeamTest < ActiveSupport::TestCase
     team = Team.new
     assert team.invalid?
     assert team.errors[:name].any?
+    assert team.errors[:event].any?
   end
 
 end

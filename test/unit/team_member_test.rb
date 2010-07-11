@@ -6,6 +6,8 @@ class TeamMemberTest < ActiveSupport::TestCase
     team_member = TeamMember.new
     assert team_member.invalid?
     assert team_member.errors[:auth_level].any?
+    assert team_member.errors[:team].any?
+    assert team_member.errors[:user].any?
   end
 
 end

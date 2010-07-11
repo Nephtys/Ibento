@@ -3,6 +3,8 @@ require 'test_helper'
 class TeamMembersControllerTest < ActionController::TestCase
   setup do
     @team_member = team_members(:one)
+    @team = Team.new(:name => 'TeamName', :event => events(:one))
+    @update = {:auth_level => 1, :team => @team, :user => users(:john)}
   end
 
   test "should get index" do
@@ -18,7 +20,7 @@ class TeamMembersControllerTest < ActionController::TestCase
 
   test "should create team_member" do
     assert_difference('TeamMember.count') do
-      post :create, :team_member => @team_member.attributes
+      post :create, :team_member => @update
     end
 
     assert_redirected_to team_member_path(assigns(:team_member))
@@ -35,7 +37,7 @@ class TeamMembersControllerTest < ActionController::TestCase
   end
 
   test "should update team_member" do
-    put :update, :id => @team_member.to_param, :team_member => @team_member.attributes
+    put :update, :id => @team_member.to_param, :team_member => @update
     assert_redirected_to team_member_path(assigns(:team_member))
   end
 
