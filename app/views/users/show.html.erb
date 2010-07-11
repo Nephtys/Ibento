@@ -1,25 +1,48 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <b>Login:</b>
-  <%= @user.login %>
-</p>
+<div id="sidebar">
 
-<p>
-  <b>Email:</b>
-  <%= @user.email %>
-</p>
+</div>
+<div id="page">
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <b>First name:</b>
-  <%= @user.first_name %>
-</p>
+  <p>
+    <b>Login:</b>
+    <%= @user.login %>
+  </p>
 
-<p>
-  <b>Last name:</b>
-  <%= @user.last_name %>
-</p>
+  <p>
+    <b>Email:</b>
+    <%= @user.email %>
+  </p>
+
+  <p>
+    <b>First name:</b>
+    <%= @user.first_name %>
+  </p>
+
+  <p>
+    <b>Last name:</b>
+    <%= @user.last_name %>
+  </p>
+
+  <h2>Events participations:</h2>
+  <ul>
+    <% participants = @user.participants %>
+    <% participants.each do |participation| %>
+      <li><%= link_to participation.event.title, participation.event %></li>
+    <% end %>
+  </ul>
+
+  <h2>Events organisations:</h2>
+  <ul>
+    <% team_members = @user.team_members %>
+    <% team_members.each do |organisation| %>
+      <li>In the team '<%= organisation.team.name %>' for the event '<%= link_to organisation.team.event.title, organisation.team.event %>'</li>
+    <% end %>
+  </ul>
 
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+  <%= link_to 'Edit', edit_user_path(@user) %> |
+  <%= link_to 'Back', users_path %>
+
+</div>

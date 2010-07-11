@@ -1,0 +1,13 @@
+#header, #content {
+    width: 900px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+#header_logo {
+    padding: 15px;
+}
+td, th {
+    padding: 0 10px;
+}
+
