@@ -1,4 +1,6 @@
 Ibento::Application.routes.draw do |map|
+  resources :notes
+
   resources :task_lists
 
   resources :tasks
