@@ -1,13 +1,50 @@
-#header, #content {
-    width: 900px;
+body {
+    background: #fff url('../images/page.png') repeat-x;
+}
+#header {
+    height: 95px;
+    width: 950px;
     margin: 0 auto;
     padding: 0 15px;
 }
 
-#header_logo {
+#content {
+    background-color: #fff;
+    width: 950px;
+    border: 2px solid #ddd;
+    margin: 0 auto;
+    padding: 0;
+}
+#page {
     padding: 15px;
+}
+
+#header_logo {
+    padding: 20px;
 }
 td, th {
     padding: 0 10px;
+}
+a, a:visited, h1, th {
+    color: #582380;
+}
+
+.button {
+    padding: 0 5px 2px;
+    -moz-border-radius: 3px;
+}
+a.button, a.button:visited {
+    text-decoration: none;
+    font-weight: bold;
+    color: #582380;
+    background-color: #eee;
+    border: 1px solid #ccc;
+    text-shadow: 0.1em 0.1em 0 #fff;
+}
+a.button:hover {
+    color: #fff;
+    background-color: #582380;
+    border: 1px solid #000;
+    text-shadow: -0.1em -0.1em 0 #000;
 }
 
