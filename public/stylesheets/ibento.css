@@ -2,7 +2,7 @@ body {
     background: #fff url('../images/page.png') repeat-x;
 }
 #header {
-    height: 95px;
+    height: 85px;
     width: 950px;
     margin: 0 auto;
     padding: 0 15px;
@@ -11,11 +11,13 @@ body {
 #content {
     background-color: #fff;
     width: 950px;
-    border: 2px solid #ddd;
     margin: 0 auto;
     padding: 0;
 }
 #page {
+    border-left: 2px solid #ddd;
+    border-right: 2px solid #ddd;
+    border-bottom: 2px solid #ddd;
     padding: 15px;
 }
 
@@ -85,4 +87,21 @@ a.delete {
 h1 {
     font-size: 1.5em;
     margin-bottom: 10px;
+}
+
+table {
+    margin-bottom: 10px;
+}
+
+#navigation ul {
+    border-bottom: 2px solid #ddd;
+}
+
+#navigation li {
+    display: inline-block;
+    padding: 0 10px;
+    border-left: 2px solid #ddd;
+    border-right: 2px solid #ddd;
+    border-top: 2px solid #ddd;
+    background-color: #eee;
 }
