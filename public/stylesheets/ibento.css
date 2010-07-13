@@ -28,14 +28,20 @@ td, th {
 a, a:visited, h1, th {
     color: #582380;
 }
+a, a:visited {
+    text-decoration: none;
+    font-weight: bold;
+}
+a:hover {
+    text-decoration: underline;
+    background: none;
+} 
 
-.button {
+a.button {
     padding: 0 5px 2px;
     -moz-border-radius: 3px;
 }
 a.button, a.button:visited {
-    text-decoration: none;
-    font-weight: bold;
     color: #582380;
     background-color: #eee;
     border: 1px solid #ccc;
@@ -46,5 +52,37 @@ a.button:hover {
     background-color: #582380;
     border: 1px solid #000;
     text-shadow: -0.1em -0.1em 0 #000;
+    text-decoration: none;
 }
 
+a.edit:before {
+    content: url('../images/icons/cog.png');
+}
+a.show:before {
+    content: url('../images/icons/magnify.png');
+}
+a.back:before {
+    content: url('../images/icons/arrow_left.png');
+}
+a.delete:before {
+    content: url('../images/icons/delete.png');
+}
+a.delete:before, a.edit:before, a.show:before, a.back:before {
+    margin-right: 2px;
+    padding-top: 3px;
+}
+
+a.edit, a.show {
+    color: #1191bb;
+}
+a.back {
+    color: #76b9cf;
+}
+a.delete {
+    color: #bd2600;
+}
+
+h1 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
