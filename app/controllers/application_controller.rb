@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   layout 'application'
-  before_filter :authenticate
+  before_filter :authenticate, :current_user
 
   def redirect_away(*params)
     session[:original_uri] = request.request_uri
@@ -26,5 +26,13 @@ class ApplicationController < ActionController::Base
       redirect_away(:action => 'new', :controller => 'login')
       return false
     end
+  end
+
+  def current_user
+    logger.warn 'coucou'
+    @_current_user ||= session[:id] &&
+      User.find(session[:id])
+    logger.warn @_current_user.inspect
+    logger.warn session[:id].inspect
   end
 end

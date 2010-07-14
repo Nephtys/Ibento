@@ -13,7 +13,7 @@ class LoginsControllerTest < ActionController::TestCase
   test "should login user" do
     post :create, :user => @user
     assert_equal @user.id, session[:id]
-    #assert_redirected_to home_path
+    assert_redirected_to home_path
   end
 
   test "should logout user" do

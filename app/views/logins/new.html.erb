@@ -1,6 +1,6 @@
 
-  <% form_tag :action => 'create' do -%>
-    Login: <%= text_field "user", "login" %>
-    <div><%= submit_tag 'Save' %></div>
-  <% end -%>
+<%= form_tag :action => 'create' do %>
+  Login: <%= text_field "user", "login" %>
+  <%= submit_tag 'Save' %>
+<% end %>
 
