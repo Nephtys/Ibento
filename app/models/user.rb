@@ -6,4 +6,9 @@ class User < ActiveRecord::Base
   validates :login, :email, :first_name, :last_name, :presence => true
   validates :login, :email, :uniqueness => true
   validates_format_of :email, :with => %r{^([0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,9})$}i
+  
+  def self.login(user_info)
+    find_by_login(user_info[:login])
+  end
+
 end
