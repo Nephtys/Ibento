@@ -124,6 +124,7 @@ a.delete {
 h1 {
     font-size: 1.2em;
     margin: 15px 0 5px;
+    float: left;
 }
 
 table {
@@ -153,16 +154,29 @@ table {
 }
 
 
-
+div.slider {
+    width: 150px;
+    height: 5px;
+    margin-top:5px;
+    margin-bottom:5px;
+    background: #ddd;
+    position: relative;
+}
+div.slider div {
+    position:absolute;
+    width:8px;
+    height:15px;
+    margin-top:-5px;
+    background: #582380;
+}
 
 .event_date {
-    float:right;
     text-align: right;
     margin: 15px 0;
     color: #582380;
 }
 .event_abstract {
-    clear: both;
+    clear: left;
     background-color: #f0e5f8;
     border: 2px solid #915ca4;
     text-align: center;
