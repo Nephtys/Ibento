@@ -1,3 +1,11 @@
+<% content_for :sidebar do %>
+  <%= form_for @participation, :as => :participation, :html => { :method => :put }, :url => { :controller => "events", :action => "update_participation" } do |f| %>
+    <%= f.hidden_field :id %>
+    <%= f.label :status, 'My participation to this event:' %>
+    <%= select("participation", "status", ParticipationState.all.collect {|ps| [ ps.label, ps.state_id ] }) %>
+    <%= submit_tag 'Update' %>
+  <% end %>
+<% end %>
 
 <p class="event_date"><%= readable_timestamp(@event.begining_at) %> - <%= readable_timestamp(@event.ending_at) %></p>
 <h1><%= @event.title %></h1>

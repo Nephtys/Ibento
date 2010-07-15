@@ -17,10 +17,20 @@
           <%= link_to 'Logout', logout_path %>
         </div>
       <% end %>
-      <%= link_to image_tag("ibento.png", :alt => 'Ibento logo', :id => 'header_logo'), home_path %>
-
+      <div id="flashes">
+        <% if flash[:notice] %>
+          <span id="flash_notice"><%= flash[:notice] %></span>
+        <% end %>
+        <% if flash[:error] %>
+          <span id="flash_error"><%= flash[:error] %></span>
+        <% end %>
+      </div>
+      <div id="header_logo">
+        <%= link_to image_tag("ibento.png", :alt => 'Ibento logo'), home_path %>
+      </div>
     </div>
     <div id="content">
+
       <div id="navigation">
         <ul>
           <li><a href="#">Users</a></li>
@@ -30,15 +40,9 @@
         </ul>
       </div>
       <div id="sidebar">
-
+        <%= yield :sidebar %>
       </div>
       <div id="page">
-        <% if flash[:notice] %>
-          <span id="flash_notice"><%= flash[:notice] %></span>
-        <% end %>
-        <% if flash[:error] %>
-          <span id="flash_error"><%= flash[:error] %></span>
-        <% end %>
         <%= yield %>
       </div>
     </div>

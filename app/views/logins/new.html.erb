@@ -1,6 +1,11 @@
-
-<%= form_tag :action => 'create' do %>
-  Login: <%= text_field "user", "login" %>
-  <%= submit_tag 'Save' %>
+<% content_for :sidebar do %>
+  <%= form_tag :action => 'create' do %>
+    Login: <%= text_field "user", "login" %>
+    <%= submit_tag 'Go!' %>
+  <% end %>
 <% end %>
+
+<h1>Welcome in Ibento</h1>
+<p>Ibento is an application design to help your organization plan internal events.</p>
+<p>It is written in Ruby on Rails 3, by Stéfanie Duprey</p>
 

@@ -23,7 +23,7 @@ class ApplicationController < ActionController::Base
   def authenticate
     unless session[:id]
       flash[:notice] = "You must be logged in"
-      redirect_away(:action => 'new', :controller => 'login')
+      redirect_away(:action => 'new', :controller => 'logins')
       return false
     end
   end
