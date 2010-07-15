@@ -29,10 +29,7 @@ class ApplicationController < ActionController::Base
   end
 
   def current_user
-    logger.warn 'coucou'
-    @_current_user ||= session[:id] &&
+    @current_user ||= session[:id] &&
       User.find(session[:id])
-    logger.warn @_current_user.inspect
-    logger.warn session[:id].inspect
   end
 end

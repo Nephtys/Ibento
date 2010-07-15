@@ -1,4 +1,6 @@
 Ibento::Application.routes.draw do |map|
+  
+  resources :events, :only => [:show]
 
   resource :login, :only => [:new, :create]
 

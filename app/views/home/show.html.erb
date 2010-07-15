@@ -1,1 +1,13 @@
+<h1>Events you're invited at:</h1>
+<% @current_user.participants.each do |participation| %>
+<ul>
+  <li><%= link_to participation.event.title, event_path(participation.event) %> </li>
+</ul>
+<% end %>
 
+<h1>Events you're helping to organize:</h1>
+<% @current_user.teams.each do |team| %>
+<ul>
+  <li><%= team.event.title %> in the team <%= team.name %></li>
+</ul>
+<% end %>

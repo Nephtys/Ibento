@@ -18,11 +18,11 @@ body {
     border-left: 2px solid #ddd;
     border-right: 2px solid #ddd;
     border-bottom: 2px solid #ddd;
-    padding: 15px;
+    padding: 5px 15px 15px;
 }
 
 #header_logo {
-    padding: 20px;
+    padding: 20px 40px;
 }
 td, th {
     padding: 0 10px;
@@ -85,8 +85,8 @@ a.delete {
 }
 
 h1 {
-    font-size: 1.5em;
-    margin-bottom: 10px;
+    font-size: 1.2em;
+    margin: 15px 0 5px;
 }
 
 table {
@@ -104,4 +104,47 @@ table {
     border-right: 2px solid #ddd;
     border-top: 2px solid #ddd;
     background-color: #eee;
+}
+
+#current_user {
+    float: right;
+    margin-right: 50px;
+    padding: 3px 12px 6px;
+    background-color: #eee;
+    border-left: 2px solid #ddd;
+    border-right: 2px solid #ddd;
+    border-bottom: 2px solid #ddd;
+    -moz-border-radius-bottomleft: 10px;
+    -moz-border-radius-bottomright: 10px;
+}
+
+#flash_notice, #flash_error {
+    display: block;
+    background-color: #eee;
+    color: #582380;
+    border: 2px solid #ddd;
+    font-weight: bold;
+    padding: 2px 6px;
+    margin-bottom: 10px;
+}
+#flash_error {
+    color: #bd2600;
+}
+
+
+
+
+.event_date {
+    float:right;
+    text-align: right;
+    margin: 15px 0;
+    color: #582380;
+}
+.event_abstract {
+    clear: both;
+    background-color: #f0e5f8;
+    border: 2px solid #915ca4;
+    text-align: center;
+    padding: 5px 15px;
+    margin-bottom: 10px;
 }
