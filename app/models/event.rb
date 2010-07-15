@@ -5,4 +5,5 @@ class Event < ActiveRecord::Base
   has_many :task_lists, :dependent => :destroy
   has_many :participants
   has_many :organizers, :through => :teams, :source => :team_members
+  belongs_to :geo_map
 end

@@ -9,6 +9,6 @@ Ibento::Application.routes.draw do |map|
 
   match 'logout' => 'logins#destroy'
 
-  root :to => "logins#new"
+  root :to => "home#show"
   
 end

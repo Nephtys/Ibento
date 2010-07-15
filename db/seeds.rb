@@ -9,6 +9,7 @@ TeamMember.delete_all
 TaskList.delete_all
 Task.delete_all
 Note.delete_all
+GeoMap.delete_all
 
 User.create(
   :login => 'wsmith',
@@ -26,12 +27,18 @@ User.create(
   :first_name => 'Jean',
   :last_name => 'Dupont')
 
+GeoMap.create(
+  :address => "28 rue manoury, Bois Colombes",
+  :width => 300,
+  :zoom => 16)
+
 Event.create(
   :title => 'RMLL 2010',
   :begining_at => Time.now.advance(:months => 1),
   :ending_at => Time.now.advance(:months => 1, :hours => 3),
   :abstract => 'Come discover a lot of free softwares at the RMLL !',
-  :full_description => 'RMLL takes this year place in Bordeaux, it\'s origin place. Come discover a lot of free softwares at the RMLL !')
+  :full_description => 'RMLL takes this year place in Bordeaux, it\'s origin place. Come discover a lot of free softwares at the RMLL !',
+  :geo_map_id => GeoMap.find(:first).id)
 
 Participant.create(
   :user => User.find(:first, :conditions => "login = 'jdupont'"),

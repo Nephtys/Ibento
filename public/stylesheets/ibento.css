@@ -124,7 +124,6 @@ a.delete {
 h1 {
     font-size: 1.2em;
     margin: 15px 0 5px;
-    float: left;
 }
 
 table {
@@ -153,29 +152,16 @@ table {
     background-color: #fff;
 }
 
-
-div.slider {
-    width: 150px;
-    height: 5px;
-    margin-top:5px;
-    margin-bottom:5px;
-    background: #ddd;
-    position: relative;
+.geo_map img {
+    padding: 5px;
+    border: 2px solid #eee;
 }
-div.slider div {
-    position:absolute;
-    width:8px;
-    height:15px;
-    margin-top:-5px;
-    background: #582380;
-}
-
 .event_date {
     text-align: right;
     margin: 15px 0;
     color: #582380;
 }
-.event_abstract {
+.abstract {
     clear: left;
     background-color: #f0e5f8;
     border: 2px solid #915ca4;

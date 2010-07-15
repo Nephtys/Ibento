@@ -1,0 +1,5 @@
+<% if @event.geo_map %>
+  <span class="geo_map">
+    <%= image_tag @event.geo_map.link, :alt => @event.geo_map.address %>
+  </span>
+<% end %>

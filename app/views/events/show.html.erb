@@ -4,5 +4,7 @@
 
 <h1><%= @event.title %></h1>
 <p class="event_date"><%= readable_timestamp(@event.begining_at) %> - <%= readable_timestamp(@event.ending_at) %></p>
-<div class="event_abstract"><%= @event.abstract %></div>
+<div class="abstract"><%= @event.abstract %></div>
+
 <div class="event_full_description"><%= @event.full_description %></div>
+<%= render :partial => "geo_map" %>
