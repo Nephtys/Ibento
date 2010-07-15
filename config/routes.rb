@@ -1,7 +1,9 @@
 Ibento::Application.routes.draw do |map|
-
+  
   put "events/update_participation"
-  resources :events, :only => [:show]
+  put "events/update_map"
+  resources :events
+  resources :geo_maps
 
   resource :login, :only => [:new, :create]
 

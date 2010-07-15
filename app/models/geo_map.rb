@@ -1,5 +1,5 @@
 class GeoMap < ActiveRecord::Base
-  has_many :events
+  has_one :event
   validates :address, :width, :zoom, :presence => true
 
   private

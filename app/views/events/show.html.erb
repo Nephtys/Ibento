@@ -2,6 +2,10 @@
 <%= render :partial => "form_update_participation" %>
 <% end %>
 
+<span class="actions">
+  <%= link_to_edit edit_event_path(@event) %>
+  <%= link_to_delete @event %>
+</span>
 <h1><%= @event.title %></h1>
 <p class="event_date"><%= readable_timestamp(@event.begining_at) %> - <%= readable_timestamp(@event.ending_at) %></p>
 <div class="abstract"><%= @event.abstract %></div>

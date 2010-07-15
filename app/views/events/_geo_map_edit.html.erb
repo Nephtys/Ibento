@@ -1,0 +1,30 @@
+<div id="geo_map_edit">
+  <%= form_for @geo_map, :as => :geo_map, :html => { :method => :put }, :url => { :controller => "events", :action => "update_map" } do |f| %>
+    <% if @geo_map.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@geo_map.errors.count, "error") %> prohibited this map from being saved:</h2>
+
+        <ul>
+          <% @geo_map.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <%= f.hidden_field :id %>
+
+    <div class="field">
+      <%= f.label :address %>
+      <%= f.text_field :address %>
+    </div>
+    <div class="field">
+      <%= f.label :width %>
+      <%= f.text_field :width %>
+    </div>
+    <div class="field">
+      <%= f.label :zoom %>
+      <%= f.text_field :zoom %>
+    </div>
+    <%= f.submit %>
+  <% end %>
+</div>

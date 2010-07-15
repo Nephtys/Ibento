@@ -106,15 +106,19 @@ a.back:before {
 a.delete:before {
     content: url('../images/icons/delete.png');
 }
-a.delete:before, a.edit:before, a.show:before, a.back:before {
+a.done:before {
+    content: url('../images/icons/save.png');
+}
+a.delete:before, a.edit:before, a.show:before, a.back:before, a.done:before {
     margin-right: 2px;
     padding-top: 3px;
+    vertical-align: sub;
 }
 
 a.edit, a.show {
     color: #1191bb;
 }
-a.back {
+a.back, a.done {
     color: #76b9cf;
 }
 a.delete {
@@ -132,6 +136,7 @@ table {
 
 #navigation ul {
     border-bottom: 2px solid #ddd;
+    height: 20px;
 }
 
 #navigation li {
@@ -141,6 +146,7 @@ table {
     border-right: 2px solid #ddd;
     border-top: 2px solid #ddd;
     background-color: #eee;
+    height: 18px;
 }
 
 #sidebar {
@@ -150,6 +156,10 @@ table {
     border-right: 2px solid #ddd;
     padding: 15px;
     background-color: #fff;
+}
+.actions {
+    float:right;
+    padding-top: 10px;
 }
 
 .geo_map img {
@@ -168,4 +178,11 @@ table {
     text-align: center;
     padding: 5px 15px;
     margin-bottom: 10px;
+}
+
+.field label{
+    float:left;
+    margin:5px;
+    width:100px;
+    display:block;
 }
