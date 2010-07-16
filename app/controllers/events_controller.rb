@@ -19,7 +19,8 @@ class EventsController < ApplicationController
 
     respond_to do |format|
       if @event.update_attributes(params[:event])
-        format.html { redirect_to(@event, :notice => 'Event was successfully updated.') }
+        flash[:notice] = "Event was successfully updated."
+        format.html { redirect_to :back }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -33,7 +34,7 @@ class EventsController < ApplicationController
 
     respond_to do |format|
       if @geo_map.update_attributes(params[:geo_map])
-        flash[:notice] = "The map has been updated"
+        flash[:notice] = "The map was successfully updated."
         format.html { redirect_to :back }
         format.xml  { head :ok }
       else
@@ -49,7 +50,7 @@ class EventsController < ApplicationController
 
     respond_to do |format|
       if ParticipationState.find(:first, :conditions => {:state_id => params[:participation][:status]}) and @participant.update_attributes(params[:participation])
-        flash[:notice] = "Your participation has been updated"
+        flash[:notice] = "Your participation was successfully updated."
         format.html { redirect_to :back }
         format.xml  { head :ok }
       else

@@ -14,7 +14,7 @@
 
     <div class="field">
       <%= f.label :title %>
-      <%= f.text_field :title %>
+      <%= f.text_field :title, :size => 42 %>
     </div>
     <div class="field">
       <%= f.label :begining_at %>
@@ -26,11 +26,11 @@
     </div>
     <div class="field">
       <%= f.label :abstract %>
-      <%= f.text_area :abstract %>
+      <%= f.text_area :abstract, :rows => 3, :cols => 60 %>
     </div>
     <div class="field">
       <%= f.label :full_description %>
-      <%= f.text_area :full_description %>
+      <%= f.text_area :full_description, :rows => 10, :cols => 60 %>
     </div>
     <%= f.submit %>
   <% end %>

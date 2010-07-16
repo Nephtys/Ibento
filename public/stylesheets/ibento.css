@@ -155,7 +155,7 @@ table {
     border-bottom: 2px solid #ddd;
     border-right: 2px solid #ddd;
     padding: 15px;
-    background-color: #fff;
+    background-color: #F0E5F8;
 }
 .actions {
     float:right;
@@ -185,4 +185,8 @@ table {
     margin:5px;
     width:100px;
     display:block;
+}
+
+.collapsed {
+    display: none;
 }

@@ -1,2 +1,14 @@
-// Place your application-specific JavaScript functions and classes here
-// This file is automatically included by javascript_include_tag :defaults
+function ibento_modify_event_gotogeneral() {
+    if ($('geo_map_edit').hasClassName('collapsed')) {
+    } else {
+        $('geo_map_edit').addClassName('collapsed');
+        $('event_edit').removeClassName('collapsed');
+    }
+}
+function ibento_modify_event_gotomap() {
+    if ($('event_edit').hasClassName('collapsed')) {
+    } else {
+        $('event_edit').addClassName('collapsed');
+        $('geo_map_edit').removeClassName('collapsed');
+    }
+}
