@@ -15,4 +15,8 @@ module ApplicationHelper
     options =  options.merge!({:class => 'done', :title => "Go back, I'm done"})
     link_to( "I'm done", object, options, html_options )
   end
+  def link_to_new(title, object, options = {}, html_options = {})
+    options =  options.merge!({:class => 'new', :title => title})
+    link_to( title, object, options, html_options )
+  end
 end

@@ -3,7 +3,7 @@ class Event < ActiveRecord::Base
   has_many :teams, :dependent => :destroy
   has_many :notes, :dependent => :destroy
   has_many :task_lists, :dependent => :destroy
-  has_many :participants
+  has_many :participants, :dependent => :destroy
   has_many :organizers, :through => :teams, :source => :team_members
-  belongs_to :geo_map
+  belongs_to :geo_map, :dependent => :destroy
 end

@@ -1,12 +1,22 @@
 class GeoMap < ActiveRecord::Base
   has_one :event
-  validates :address, :width, :zoom, :presence => true
+  validates :address, :presence => true
 
   private
 
-  before_save {|geo_map| geo_map.link = get_link(geo_map)}
+  before_save {|geo_map| process_values(geo_map)}
 
-  def get_link(geo_map)
+  def event_id
+    event.id
+  end
+
+  def process_values(geo_map)
+    self.width ||= 300
+    self.zoom ||= 16
+    set_link(geo_map)
+  end
+
+  def set_link(geo_map)
     address_uri = URI.escape(geo_map.address)
     link = "http://maps.google.com/maps/api/staticmap?center="
     link += address_uri
@@ -14,6 +24,6 @@ class GeoMap < ActiveRecord::Base
     link += address_uri
     link += "&zoom="+geo_map.zoom.to_s+"&size="+geo_map.width.to_s+"x"+geo_map.width.to_s
     link += "&maptype=roadmap&sensor=false"
-    return link
+    self.link = link
   end
 end

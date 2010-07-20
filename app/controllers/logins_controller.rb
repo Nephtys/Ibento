@@ -1,5 +1,5 @@
 class LoginsController < ApplicationController
-  skip_before_filter :authenticate, :only => [:new, :create]
+  skip_before_filter :authenticate, :current_user
 
   def new
     @user = User.new

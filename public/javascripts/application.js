@@ -12,3 +12,12 @@ function ibento_modify_event_gotomap() {
         $('geo_map_edit').removeClassName('collapsed');
     }
 }
+
+function ibento_modify_event_selectgoto(tab_name) {
+    if (tab_name == 'general') {
+        ibento_modify_event_gotogeneral();
+    }
+    else if (tab_name == 'map') {
+        ibento_modify_event_gotomap();
+    }
+}

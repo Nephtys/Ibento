@@ -109,13 +109,16 @@ a.delete:before {
 a.done:before {
     content: url('../images/icons/save.png');
 }
-a.delete:before, a.edit:before, a.show:before, a.back:before, a.done:before {
+a.new:before {
+    content: url('../images/icons/new.png');
+}
+a.delete:before, a.edit:before, a.show:before, a.back:before, a.done:before, a.new:before {
     margin-right: 2px;
     padding-top: 3px;
     vertical-align: sub;
 }
 
-a.edit, a.show {
+a.edit, a.show, a.new {
     color: #1191bb;
 }
 a.back, a.done {

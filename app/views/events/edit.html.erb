@@ -9,5 +9,11 @@
 <h1><%= @event.title %> - Edit</h1>
 <%= render :partial => "geo_map_edit" %>
 <%= render :partial => "event_edit" %>
+<%= render :partial => "edit_participants" %>
 
+<% if session[:current_tab] %>
+  <script type="text/javascript">ibento_modify_event_selectgoto('<%=session[:current_tab]%>')</script>
+<% else %>
+  <script type="text/javascript">ibento_modify_event_gotogeneral()</script>
+<% end %>
 

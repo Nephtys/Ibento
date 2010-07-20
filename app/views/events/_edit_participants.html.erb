@@ -1,0 +1,10 @@
+<% form_tag :action => 'search' do -%>
+<div class="auto_complete_res">
+<%= observe_field 'search_email', :url => {:action => 'update_fields'}, :with => "'email=' + element.value", :on => 'blur', :frequency => 0.50 %>
+    <%= text_field :search, :emails, "size" => 20 %>
+</div>
+<div class="auto_complete">
+    <%= text_field_with_auto_complete :search, :email, "size" => 20 %>
+</div>
+<%= image_submit_tag("icons/magnifier", :title => 'Search',:class=>"image_to") %>
+<% end -%>

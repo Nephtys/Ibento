@@ -1,3 +1,7 @@
+<% content_for :sidebar do %>
+  <%= link_to_new "New event", new_event_path %>
+<% end %>
+
 <h1>Events you're invited at:</h1>
 <% @current_user.participants.each do |participation| %>
 <ul>

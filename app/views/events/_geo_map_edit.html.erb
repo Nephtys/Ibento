@@ -1,4 +1,4 @@
-<div id="geo_map_edit" class="collapsed">
+<div id="geo_map_edit">
   <%= form_for @geo_map, :as => :geo_map, :html => { :method => :put }, :url => { :controller => "events", :action => "update_map" } do |f| %>
     <% if @geo_map.errors.any? %>
       <div id="error_explanation">
@@ -11,8 +11,11 @@
         </ul>
       </div>
     <% end %>
-    <%= f.hidden_field :id %>
-
+    <% if @geo_map.id %>
+      <%= f.hidden_field :id %>
+    <% end %>
+    <%= hidden_field :event, :id %>
+  
     <div class="field">
       <%= f.label :address %>
       <%= f.text_field :address %>
